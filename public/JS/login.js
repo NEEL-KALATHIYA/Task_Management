@@ -14,10 +14,10 @@ const loginForm = async (e) => {
     const response = await Loginuser(user);
     console.log("Login response:", response);
 
-    if (response && response.token) {
+    if (response) {
       console.log("Login successful! Redirecting...");
       localStorage.setItem("token", response.token);
-      window.location.href = "./dashboard.html"; // Redirect to dashboard
+      window.location.href = "/view/index.html";
     } else {
       console.error("Login failed: Invalid credentials");
       alert("Invalid email or password!");
